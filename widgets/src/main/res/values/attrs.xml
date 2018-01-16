@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- RecyclerViewLayout -->
+    <declare-styleable name="RecyclerViewLayout">
+        <attr name="is_swipeable" format="boolean" />
+        <attr name="empty_view" format="reference|integer" />
+        <attr name="error_view" format="reference|integer" />
+    </declare-styleable>
+
+    <!-- ProgressButton -->
+    <declare-styleable name="ProgressButton">
+        <attr name="loadingDrawable" format="reference" />
+        <attr name="successText" format="reference|string" />
+        <attr name="errorText" format="reference|string" />
+        <attr name="loading" format="reference|boolean" />
+        <attr name="autoDisableClickable" format="reference|boolean" />
+    </declare-styleable>
+
+    <!-- MultiLanguage -->
+    <declare-styleable name="Translatable">
+        <attr name="page" format="string" />
+    </declare-styleable>
+
+    <!-- BaseToolbarLayout -->
+    <declare-styleable name="BaseToolbarLayout">
+        <attr name="leftIcon" format="reference"/>
+        <attr name="rightIcon" format="reference"/>
+    </declare-styleable>
+
+    <!-- SimpleToolbarLayout -->
+    <declare-styleable name="SimpleToolbarLayout">
+        <attr name="title" format="string"/>
+    </declare-styleable>
+
+    <!-- Toolbar -->
+    <declare-styleable name="ToolbarLayout">
+        <attr name="use_logo" format="boolean" />
+        <attr name="toolbar_title" format="string" />
+        <attr name="left_item" format="reference" />
+        <attr name="right_item" format="reference" />
+        <attr name="right_tint" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="DateTimeTextView">
+        <attr name="color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="EditTextWithSuffix">
+        <attr name="suffix" format="string|reference" />
+        <attr name="suffixPadding" format="dimension" />
+    </declare-styleable>
+
+</resources>

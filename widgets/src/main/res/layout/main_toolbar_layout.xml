@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageButton
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:background="@color/transparent"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu_bars" />
+
+    <com.bilgetech.widgets.ui.imageview.SimpleImageView
+        android:id="@+id/sivBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="72dp"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="8dp"
+        android:background="@color/transparent"
+        android:padding="8dp"
+        android:src="@drawable/ic_bell" />
+
+    <TextView
+        android:id="@+id/badgeView"
+        style="@style/Badge.Small"
+        android:layout_gravity="right"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="12dp"
+        tools:text="2" />
+
+</merge>

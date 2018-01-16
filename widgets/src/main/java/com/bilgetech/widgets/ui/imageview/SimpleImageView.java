@@ -1,4 +1,4 @@
-package com.bilgetech.widgets.imageview;
+package com.bilgetech.widgets.ui.imageview;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -3,16 +3,22 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "resourcePackageName" : android.defaultConfig.applicationId,
+                        "generateFinalClasses": "false"
+                ]
+            }
+        }
     }
 
     buildTypes {
@@ -26,7 +32,7 @@ android {
 
 ext {
     AAVersion = '4.3.1'
-    SupportVersion = '26.1.0'
+    SupportVersion = '27.0.2'
 }
 
 dependencies {
@@ -36,7 +42,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
 
     // Android Support
     compile "com.android.support:appcompat-v7:$SupportVersion"
@@ -55,5 +60,10 @@ dependencies {
     // UI
     compile 'de.hdodenhof:circleimageview:2.1.0'
 
+    // Object Storage
+    compile 'io.paperdb:paperdb:2.0'
+
+    // Phone Nubmer Utility
+    compile 'com.googlecode.libphonenumber:libphonenumber:7.2.2'
 
 }

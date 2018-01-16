@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.bilgetech.widgets.multilanguageview.MultiLanguageTextView
+            android:id="@+id/tvDialogMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Unexpected error has occured. "
+            tools:text="Beklenmedik bir hata oluştu"
+            android:textSize="18dp"
+            android:padding="50dp" />
+
+        <com.bilgetech.widgets.multilanguageview.MultiLanguageButton
+            android:id="@+id/btnDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="OK"
+            tools:text="Tamam"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+</merge>
