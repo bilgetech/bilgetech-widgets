@@ -38,22 +38,41 @@
 
     <com.bilgetech.widgets.ui.toolbar.SimpleToolbarLayout_
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
 
     <com.bilgetech.widgets.ui.toolbar.MainToolbarLayout_
+        android:id="@+id/mainToolbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.bilgetech.widgets.ui.button.ProgressButton
+        android:id="@+id/pbSendWithLoading"
+        style="@style/ProgressButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="Hello World!" />
+        android:text="Send" />
+
+    <com.bilgetech.widgets.ui.button.ProgressButton
+        android:id="@+id/pbSendWithError"
+        style="@style/ProgressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:errorText="Failed"
+        app:successText="Success" />
+
+    <com.bilgetech.widgets.ui.button.ProgressButton
+        android:id="@+id/pbSendWithSuccess"
+        style="@style/ProgressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:errorText="Failed"
+        app:successText="Success" />
 
 </LinearLayout>
