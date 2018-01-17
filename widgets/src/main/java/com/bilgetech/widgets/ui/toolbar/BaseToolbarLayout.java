@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 
 import com.bilgetech.widgets.R;
 
@@ -28,6 +29,7 @@ public abstract class BaseToolbarLayout extends FrameLayout {
     int rightIcon;
 
     @ViewById
+    protected ImageButton leftButton, rightButton;
 
     protected ButtonClickListener buttonClickListener;
 
@@ -65,14 +67,14 @@ public abstract class BaseToolbarLayout extends FrameLayout {
         }
     }
 
-    @Click(R.id.leftButton)
+    @Click(resName = "leftButton")
     void onLeftButtonClick() {
         if (buttonClickListener != null) {
             buttonClickListener.onLeftButtonClick();
         }
     }
 
-    @Click(R.id.rightButton)
+    @Click(resName = "rightButton")
     void onRightButtonClick() {
         if (buttonClickListener != null) {
             buttonClickListener.onRightButtonClick();
@@ -111,3 +113,4 @@ public abstract class BaseToolbarLayout extends FrameLayout {
         void onRightButtonClick();
     }
 }
+

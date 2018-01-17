@@ -10,7 +10,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
-@EViewGroup(R.layout.main_toolbar_layout)
+@EViewGroup(resName = "main_toolbar_layout")
 public class MainToolbarLayout extends BaseToolbarLayout {
 
     @ViewById

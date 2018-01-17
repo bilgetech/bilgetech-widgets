@@ -36,6 +36,14 @@
 
     </LinearLayout>
 
+    <com.bilgetech.widgets.ui.toolbar.SimpleToolbarLayout_
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <com.bilgetech.widgets.ui.toolbar.MainToolbarLayout_
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

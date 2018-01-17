@@ -14,7 +14,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
-@EViewGroup(R.layout.simple_toolbar_layout)
+@EViewGroup(resName = "simple_toolbar_layout")
 public class SimpleToolbarLayout extends BaseToolbarLayout implements BaseToolbarLayout.ButtonClickListener {
 
     private String title;
