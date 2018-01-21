@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">widgets</string>
+    <string name="empty_message">Silence is a great source of strength\nLao Tzu</string>
+    <string name="error_message">Oops an error occurred</string>
 </resources>

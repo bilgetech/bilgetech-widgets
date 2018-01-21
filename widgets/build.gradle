@@ -69,4 +69,8 @@ dependencies {
     // Phone Nubmer Utility
     compile 'com.googlecode.libphonenumber:libphonenumber:7.2.2'
 
+    // Gson
+    compile 'com.google.code.gson:gson:2.6.2'
+
+
 }
