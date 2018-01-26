@@ -11,17 +11,17 @@ import io.paperdb.Paper;
  * Created by damra on 16/01/2018.
  */
 
-public final class BTInitializer extends ThreadSafeSingleton<BTInitializer> {
+public final class Initializer extends ThreadSafeSingleton<Initializer> {
 
-    private BTInitializer() {
+    private Initializer() {
     }
 
-    private static BTInitializer instance;
+    private static Initializer instance;
 
     public synchronized static void init(Context context) {
 
         if (instance == null) {
-            instance = getInstance(BTInitializer.class);
+            instance = getInstance(Initializer.class);
 
             Paper.init(context);
             MultiLanguageHelper.load();
