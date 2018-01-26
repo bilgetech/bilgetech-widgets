@@ -75,7 +75,7 @@
         app:errorText="Failed"
         app:successText="Success" />
 
-    <com.bilgetech.widgets.ui.RecyclerViewLayout_
+    <com.bilgetech.widgets.RecyclerViewLayout_
         android:id="@+id/recyclerViewLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

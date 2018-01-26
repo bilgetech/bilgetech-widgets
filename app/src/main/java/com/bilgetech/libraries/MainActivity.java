@@ -1,10 +1,9 @@
 package com.bilgetech.libraries;
 
-import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import com.bilgetech.libraries.sample.Consts;
@@ -16,13 +15,18 @@ import com.bilgetech.widgets.ui.button.ProgressButton;
 import com.bilgetech.widgets.ui.toolbar.MainToolbarLayout;
 import com.google.gson.Gson;
 
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private MainToolbarLayout mainToolbarLayout;
     private ProgressButton pbSendWithLoading;
@@ -33,14 +37,19 @@ public class MainActivity extends AppCompatActivity {
     @Bean
     protected SampleAdapter sampleAdapter;
 
-    final List<SampleData> items = Arrays.asList(new Gson().fromJson(Consts.SAMPLE_USER_LAT_LON_JSON, SampleData[].class));
+    List<SampleData> items = new ArrayList<>();
+
+    {
+        items = Arrays.asList(new Gson().fromJson(Consts.SAMPLE_USER_LAT_LON_JSON, SampleData[].class));
+
+        Log.d(TAG, "instance initializer: "+ items.size());
+
+    }
 
     private static int notificationCount = 0;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    @AfterViews
+    protected void afterViews() {
 
         new CustomAlertDialogBuilder(MainActivity.this, "Hello world!");
 
@@ -78,16 +87,15 @@ public class MainActivity extends AppCompatActivity {
     private void prepareRecyclerViewItems() {
 
         // 1. Empty view display
-        // 2. 5 seconds after try load data with failure.
+        // 2. Error view display
+        // 3. Adapter Items view display
 
         Handler handler = new Handler();
-
-        sampleAdapter.setItems(new ArrayList<SampleData>());
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                recyclerViewLayout.setCurrentState(RecyclerViewLayout.State.ERROR);
             }
         }, 5000);
 
@@ -97,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 sampleAdapter.setItems(items);
                 recyclerViewLayout.setCurrentState(RecyclerViewLayout.State.DATA);
             }
-        }, 2000);
+        }, 10000);
 
     }
 

@@ -25,8 +25,7 @@ public class SampleAdapter extends BaseRecyclerViewAdapter<SampleData, SampleVie
 
     @Override
     protected SampleView onCreateItemView(ViewGroup parent, int viewType) {
-        // return DummyViev_.build(context);
-        return null;
+        return SampleView_.build(context);
     }
 
     @Override

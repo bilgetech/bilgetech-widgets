@@ -24,7 +24,6 @@ interface ItemClickListener {
 @EViewGroup(R.layout.dummy_view)
 public class SampleView extends LinearLayout {
 
-    private static final String TAG = SampleView.class.getSimpleName();
     private ItemClickListener itemClickListener;
 
     @ViewById
@@ -51,7 +50,7 @@ public class SampleView extends LinearLayout {
         this.itemClickListener = itemClickListener;
     }
 
-    @Click
+    @Click(R.id.llRoot)
     public void viewClick(View clickedView) {
         itemClickListener.viewClick(clickedView);
     }
