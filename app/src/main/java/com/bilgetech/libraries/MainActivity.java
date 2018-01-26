@@ -1,19 +1,19 @@
 package com.bilgetech.libraries;
 
+import android.os.Build;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.bilgetech.libraries.sample.Consts;
+import com.bilgetech.libraries.sample.JSONUtils;
 import com.bilgetech.libraries.sample.SampleAdapter;
 import com.bilgetech.libraries.sample.SampleData;
 import com.bilgetech.widgets.RecyclerViewLayout;
 import com.bilgetech.widgets.ui.alertdialog.CustomAlertDialogBuilder;
 import com.bilgetech.widgets.ui.button.ProgressButton;
 import com.bilgetech.widgets.ui.toolbar.MainToolbarLayout;
-import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
@@ -38,13 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected SampleAdapter sampleAdapter;
 
     List<SampleData> items = new ArrayList<>();
-
-    {
-        items = Arrays.asList(new Gson().fromJson(Consts.SAMPLE_USER_LAT_LON_JSON, SampleData[].class));
-
-        Log.d(TAG, "instance initializer: "+ items.size());
-
-    }
 
     private static int notificationCount = 0;
 
@@ -89,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
         // 1. Empty view display
         // 2. Error view display
         // 3. Adapter Items view display
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            items = Arrays.asList(JSONUtils.getJsonFileAsClass(getResources(), R.raw.sample_user_lat_lon_json, SampleData[].class).get());
+        }
+
+        Log.d(TAG, "instance initializer: "+ items.size());
+
 
         Handler handler = new Handler();
 
