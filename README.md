@@ -32,7 +32,7 @@ dependencies {
     @Override
     public void onCreate() {
         super.onCreate();
-        BTInitializer.init(this);
+        Initializer.init(this);
     }
 ```
 
