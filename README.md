@@ -23,7 +23,7 @@ App Gradle:
 
 ```
 dependencies {
-  compile 'com.github.bilgetech:bilgetech-widgets:1.0'
+  compile 'com.github.bilgetech:bilgetech-widgets:1.0.2'
 }
 ```
 
